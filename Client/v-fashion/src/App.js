@@ -18,7 +18,7 @@ function App() {
             args={[1, 32, 16]}
           />
           <meshStandardMaterial
-            color={ 'red' } 
+            color={ 'violet' } 
           />
         </mesh>
         
