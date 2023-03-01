@@ -14,8 +14,8 @@ function App() {
           args={[-5, 2, 0]} 
         />
         <mesh>
-          <boxBufferGeometry
-            args={[1, 1, 1]}
+          <sphereBufferGeometry
+            args={[1, 32, 16]}
           />
           <meshStandardMaterial
             color={ 'red' } 
