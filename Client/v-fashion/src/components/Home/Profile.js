@@ -2,10 +2,10 @@ import React from 'react'
 
 const Profile = () => {
   return (
-    <div className='profile'>
+    <div className='profile' title='Your profile'> 
         <img
-            src=''
-            
+            src='assets/images/kim taehyung.jpg'
+            className='profile-img'
         />
     </div>
   )

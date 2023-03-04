@@ -6,7 +6,7 @@ import Home from './pages/Home/Home';
 
 function App() {
   return (
-    <div className="home-model" style={{color: '#0f0f0f'}}>
+    <div className="home" style={{color: '#0f0f0f'}}>
       <Home />
       
       
