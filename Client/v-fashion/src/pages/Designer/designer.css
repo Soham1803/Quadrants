@@ -3,11 +3,14 @@ body{
 }
 
 .designer{
-    height: 50%;
+    position: relative;
+    height: 55%;
 }
 
 .Canvas{
+    position: inherit;
     margin-left: 8rem;
     margin-right: 8rem;
-    height: 10rem;
+    height: 15rem;
+    width: 5rem;
 }
