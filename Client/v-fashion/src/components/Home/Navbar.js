@@ -21,7 +21,7 @@ const Navbar = () => {
               text = "Connect wallet!"
               color = "red"
           />
-          {/* < Profile /> */}
+          < Profile />
         </div>
     </div>
   )

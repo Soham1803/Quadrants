@@ -1,0 +1,5 @@
+{
+    "glTF.Validation.severityOverrides": {},
+    "glTF.Validation.ignoredIssues": [],
+    "glTF.Validation.maxIssues": 1000
+}
