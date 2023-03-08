@@ -13,6 +13,10 @@ body{
                                 #637BA9;
 }
 
+#root{
+    width: 100vw;
+}
+
 .navbar{
     position: absolute;
     background: rgba(99, 123, 169, 0.3);
