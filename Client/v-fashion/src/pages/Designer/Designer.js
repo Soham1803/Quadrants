@@ -88,7 +88,7 @@ const Designer = () => {
       <Navbar />
       <Sidebar />
       {/* <Canvas className='customize-model'> */}
-      <div className="sketchfab-embed-wrapper"> 
+      {/* <div className="sketchfab-embed-wrapper"> 
         {/* <iframe 
           title="Cute girl sitting on chair(SUL)" 
           frameBorder="0" 
@@ -99,9 +99,9 @@ const Designer = () => {
           execution-while-not-rendered='true' 
           web-share='true' 
           src="https://sketchfab.com/models/c347433ba39345b899ad98721b1dd0b2/embed"> 
-        </iframe>  */}
-      </div>  
-        <Canvas>
+        </iframe>  
+      </div>   */}
+        <Canvas className='design-model'>
           <Suspense fallback={null}>
             <ambientLight />
             {/* <Model1 /> */}

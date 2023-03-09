@@ -11,11 +11,11 @@ export function Clubbed_male_model(props) {
   const { nodes, materials, animations } = useGLTF('assets/models/clubbed_maled_model.glb')
   const { actions } = useAnimations(animations, group)
 
-  const hairVersion = 0;
-  const specsVersion = 0;
+  const hairVersion = 1;
+  const specsVersion = 1;
   const upperVersion = 0;
-  const lowerVersion = 0;
-  const footwearVersion = 0;
+  const lowerVersion = 1;
+  const footwearVersion = 1;
 
   return (
     <group ref={group} {...props} dispose={null}>

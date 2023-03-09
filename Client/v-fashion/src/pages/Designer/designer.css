@@ -4,13 +4,19 @@ body{
 
 .designer{
     position: relative;
+    display: flex;
+    flex-direction: column;
     height: 55%;
 }
 
-.Canvas{
-    position: inherit;
-    margin-left: 8rem;
-    margin-right: 8rem;
-    height: 15rem;
-    width: 5rem;
+.design-model{
+    width: 50%;
+}
+
+Canvas{
+    position: relative;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    height: 20rem;
+    width: 0.05rem;
 }
