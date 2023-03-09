@@ -4,7 +4,7 @@ import Footer from '../../components/Home/Footer'
 import Sidebar from '../../components/Home/Sidebar'
 import { Canvas } from '@react-three/fiber'
 import { OrbitControls } from '@react-three/drei'
-import { useAnimations } from '@react-three/drei'
+import { useAnimations, AccumulativeShadows, RandomizedLight, Plane } from '@react-three/drei'
 import './designer.css'
 
 import { Clubbed_male_model } from '../../components/Model_jsx/Clubbed_maled_model'
@@ -84,38 +84,54 @@ function Model2(props) {
 
 const Designer = () => {
   return (
-    <div className='designer'>
+    <>
       <Navbar />
       <Sidebar />
-      {/* <Canvas className='customize-model'> */}
-      {/* <div className="sketchfab-embed-wrapper"> 
-        {/* <iframe 
-          title="Cute girl sitting on chair(SUL)" 
-          frameBorder="0" 
-          allowFullScreen mozallowfullscreen="true" 
-          webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking" 
-          xr-spatial-tracking='true' 
-          execution-while-out-of-viewport='true' 
-          execution-while-not-rendered='true' 
-          web-share='true' 
-          src="https://sketchfab.com/models/c347433ba39345b899ad98721b1dd0b2/embed"> 
-        </iframe>  
-      </div>   */}
-        <Canvas className='design-model'>
-          <Suspense fallback={null}>
-            <ambientLight />
-            {/* <Model1 /> */}
-            {/* <Model2 /> */}
-            <Clubbed_male_model />
-            <OrbitControls />
-          </Suspense>
-        </Canvas>
+      <div className='designer'>
         
-      
+        
+        {/* <Canvas className='customize-model'> */}
+        {/* <div className="sketchfab-embed-wrapper"> 
+          {/* <iframe 
+            title="Cute girl sitting on chair(SUL)" 
+            frameBorder="0" 
+            allowFullScreen mozallowfullscreen="true" 
+            webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking" 
+            xr-spatial-tracking='true' 
+            execution-while-out-of-viewport='true' 
+            execution-while-not-rendered='true' 
+            web-share='true' 
+            src="https://sketchfab.com/models/c347433ba39345b899ad98721b1dd0b2/embed"> 
+          </iframe>  
+        </div>   */}
+          <div className='design-model'>
+            <Canvas  shadows >
+              <Suspense fallback={null}>
+                <ambientLight intensity={0.2}/>
+                <directionalLight position={[0.25,1,1.5]} castShadow/>
+                {/* <Model1 /> */}
+                {/* <Model2 /> */}
+                <Plane
+                  receiveShadow
+                  rotation={[-Math.PI / 2, 0, 0]}
+                  position={[0, -2.5, 0]}
+                  args={[10, 10]}
+                ></Plane>
+                {/* <AccumulativeShadows frames={100} alphaTest={0.85} opacity={0.75} scale={10} position={[0, -1.3, 0]}>
+                  <RandomizedLight amount={8} radius={1.5} ambient={0.5} intensity={0.75} position={[3, 2, 4]} bias={0.001} />
+                </AccumulativeShadows> */}
+                <Clubbed_male_model/>
+                <OrbitControls />
+              </Suspense>
+            </Canvas>
+          </div>  
+        
 
-      {/* </Canvas> */}
+        {/* </Canvas> */}
+        
+      </div>
       <Footer />
-    </div>
+    </>
   )
 }
 
