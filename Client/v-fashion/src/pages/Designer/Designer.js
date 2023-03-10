@@ -6,12 +6,14 @@ import { Canvas } from '@react-three/fiber'
 import { OrbitControls } from '@react-three/drei'
 import { useAnimations, AccumulativeShadows, RandomizedLight, Plane } from '@react-three/drei'
 import './designer.css'
+import DesignerInterfaces from '../../components/Interfaces/DesignerInterfaces'
 
 import { Clubbed_male_model } from '../../components/Model_jsx/Clubbed_maled_model'
 
 import { Suspense, useState, useRef } from 'react'
 import { useGLTF } from '@react-three/drei'
 import { useEffect } from 'react'
+import Cameracontrols from '../../components/Controls/Cameracontrols'
 
 function Model1(props) {
   const group = useRef()
@@ -107,6 +109,7 @@ const Designer = () => {
           <div className='design-model'>
             <Canvas  shadows >
               <Suspense fallback={null}>
+                <Cameracontrols />
                 <ambientLight intensity={0.2}/>
                 <directionalLight position={[0.25,1,1.5]} castShadow/>
                 {/* <Model1 /> */}
@@ -121,9 +124,10 @@ const Designer = () => {
                   <RandomizedLight amount={8} radius={1.5} ambient={0.5} intensity={0.75} position={[3, 2, 4]} bias={0.001} />
                 </AccumulativeShadows> */}
                 <Clubbed_male_model/>
-                <OrbitControls />
+                {/* <OrbitControls /> */}
               </Suspense>
             </Canvas>
+            <DesignerInterfaces />
           </div>  
         
 

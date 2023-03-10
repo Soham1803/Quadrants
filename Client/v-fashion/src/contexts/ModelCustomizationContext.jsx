@@ -1,12 +1,12 @@
-import { createContext } from "react";
+import { createContext, useState, useContext } from "react";
 
-const ModelCustomizationContext = createContext();
+const ModelCustomizationContext = createContext({});
 
 export const CameraModes = {
-    'FREE':'FREE',
-    'HEAD':'HEAD',
-    'TOP':'TOP',
-    'BOTTOM':'BOTTOM'
+    FREE:"FREE",
+    HEAD:"HEAD",
+    TOP:"TOP",
+    BOTTOM:"BOTTOM"
 };
 
 export const ModelCustomizationProvider = ({children}) =>{
