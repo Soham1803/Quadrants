@@ -3,6 +3,7 @@ import './index.css';
 import { BrowserRouter, Routes, Route} from 'react-router-dom';
 import Home from './pages/Home/Home';
 import Designer from './pages/Designer/Designer';
+import ImmersiveWorld from './pages/Immersive/ImmersiveWorld';
 
 
 function App() {
@@ -12,6 +13,7 @@ function App() {
         <Route path='/' element={<Home />} />
         <Route path='/home' element={<Home />} />
         <Route path='/designer' element={<Designer />} />
+        <Route path='/immersive_world' element={<ImmersiveWorld />} />
         
         
 
