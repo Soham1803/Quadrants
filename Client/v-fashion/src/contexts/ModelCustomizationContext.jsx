@@ -12,11 +12,32 @@ export const CameraModes = {
 export const ModelCustomizationProvider = ({children}) =>{
     const [cameraMode, setCameraMode] = useState(CameraModes.FREE);
 
+    const [hairStyle, setHairStyle] = useState(0);
+    const [specs, setSpecs] = useState(0);
+    const [topOutfit, setTopOutfit] = useState(0);
+    const [bottomOutfit, setBottomOutfit] = useState(0);
+    const [footwear, setFootwear] = useState(0);
+
     return(
         <ModelCustomizationContext.Provider 
             value={{
                 cameraMode,
-                setCameraMode
+                setCameraMode,
+
+                hairStyle,
+                setHairStyle,
+
+                specs,
+                setSpecs,
+
+                topOutfit,
+                setTopOutfit,
+                
+                bottomOutfit,
+                setBottomOutfit,
+
+                footwear,
+                setFootwear
             }}
         >
             {children}

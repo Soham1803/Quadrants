@@ -3,6 +3,7 @@ import { Button, ButtonGroup, Flex } from '@chakra-ui/react';
 import { CameraModes,
          useModelCustomization,
         } from '../../contexts/ModelCustomizationContext';
+import AssetPicker from './AssetPicker';
 
 
 
@@ -34,6 +35,8 @@ const DesignerInterfaces = () => {
 
       ))}
       </ButtonGroup>
+      
+      <AssetPicker />
     </Flex>
   )
 }
