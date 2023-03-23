@@ -5,7 +5,6 @@ import { Fashion_show_hall } from "../../components/Model_jsx/Fashion_show_hall"
 import { Camera, SpotLightHelper } from "three";
 import { VRButton, XR } from "@react-three/xr"
 import { useXR, useFrame } from '@react-three/xr'
-import VRCameracontrols from "../../components/Controls/VRCameracontrols";
 import ReactMediaQuery from "../../utils/ReactMediaQuery";
 
 const MovePlayer = () => {
@@ -30,12 +29,15 @@ const ImmersiveWorld = () => {
 
     const XRVButtonStyles = {
       zIndex: '2',
-      backgroundColor:'greenyellow',
+      color: 'aliceblue',
+      backgroundColor:'#408E91',
       borderStyle:'solid',
+      borderRadius:'12px',
       position:'fixed',
-      width:'6rem',
-      heigth:'1rem',
-      left: isPhone ? '40vw': '47vw',
+      width:'8rem',
+      height:'2rem',
+      left: '46vw',
+      right: '46vw',
       top:'85vh',
       
     
@@ -50,11 +52,7 @@ const ImmersiveWorld = () => {
         style={XRVButtonStyles} 
       />
       <Canvas>
-        <XR
-          onSessionStart={() => {
-            new Camera.prototype.position.set(-1, 2, 2);
-          }}
-        >
+        <XR>
           <MovePlayer />
           <Suspense fallback={null} >
             <Fashion_show_hall />
