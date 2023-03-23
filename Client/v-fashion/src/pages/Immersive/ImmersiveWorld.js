@@ -1,22 +1,62 @@
-import React, {useRef} from "react";
-import { Canvas, GridHelperProps } from "@react-three/fiber";
-import { CameraShake, Environment, OrbitControls, useHelper } from "@react-three/drei";
+import React, {useRef, useEffect, Suspense} from "react";
+import { Canvas, GridHelperProps, useThree } from "@react-three/fiber";
+import { CameraShake, Environment, OrbitControls, Sparkles, useHelper } from "@react-three/drei";
 import { Fashion_show_hall } from "../../components/Model_jsx/Fashion_show_hall";
-import { SpotLightHelper } from "three";
+import { Camera, SpotLightHelper } from "three";
 import { VRButton, XR } from "@react-three/xr"
+import { useXR, useFrame } from '@react-three/xr'
+import ReactMediaQuery from "../../utils/ReactMediaQuery";
+
+const MovePlayer = () => {
+
+  const { isPresenting, player } = useXR();
+
+  useEffect(() => {
+    if (isPresenting) {
+      player.position.x = -5
+      player.position.y = 0.25
+      player.position.z = 15
+    }
+  }, [isPresenting])
+}
 
 const ImmersiveWorld = () => {
 
-  // const light = useRef();
-  // useHelper(light, SpotLightHelper, 'red')
+  const isPhone = ReactMediaQuery('(max-width: 400px)');
+
+  
+
+
+    const XRVButtonStyles = {
+      zIndex: '2',
+      color: 'aliceblue',
+      backgroundColor:'#408E91',
+      borderStyle:'solid',
+      borderRadius:'12px',
+      position:'fixed',
+      width:'8rem',
+      height:'2rem',
+      left: '46vw',
+      right: '46vw',
+      top:'85vh',
+      
+    
+
+    }
+    
+    
   
   return (
     <div style={{ height: "100vh", width: "100vw" }}>
-      <VRButton />
+      <VRButton
+        style={XRVButtonStyles} 
+      />
       <Canvas>
         <XR>
-          <camera position={[-1, 0.5, 2]} />
-          <Fashion_show_hall />
+          <MovePlayer />
+          <Suspense fallback={null} >
+            <Fashion_show_hall />
+          </Suspense>
           <OrbitControls />
           <Environment files='./assets/HDRIs/hansaplatz_4k.hdr' background blur={0.075} />
           <ambientLight args={[1]} />
